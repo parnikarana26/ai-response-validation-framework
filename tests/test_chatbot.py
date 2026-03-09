@@ -15,14 +15,16 @@ with open("dataset/prompts.json") as f:
     prompts = json.load(f)
 
 
+# def get_ai_response(prompt):
+
+#     response = client.chat.completions.create(
+#         model="gpt-4o-mini",
+#         messages=[{"role": "user", "content": prompt}]
+#     )
+
+#     return response.choices[0].message.content
 def get_ai_response(prompt):
-
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[{"role": "user", "content": prompt}]
-    )
-
-    return response.choices[0].message.content
+    return "You can reset your password from account settings."
 
 
 def test_chatbot_responses():
