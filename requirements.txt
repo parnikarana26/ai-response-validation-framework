@@ -1,1 +1,4 @@
-
+openai
+pytest
+sentence-transformers
+numpy
