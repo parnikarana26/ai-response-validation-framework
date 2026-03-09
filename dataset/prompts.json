@@ -1,0 +1,12 @@
+[
+ {
+  "prompt": "How do I reset my password?",
+  "expected_keywords": ["password","reset","settings"],
+  "expected_answer": "User should reset password from account settings"
+ },
+ {
+  "prompt": "How can I track my order?",
+  "expected_keywords": ["order","track","status"],
+  "expected_answer": "User should check order tracking page"
+ }
+]
