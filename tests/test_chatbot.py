@@ -24,7 +24,19 @@ with open("dataset/prompts.json") as f:
 
 #     return response.choices[0].message.content
 def get_ai_response(prompt):
-    return "You can reset your password by clicking the forgot password option on the login page and following the instructions sent to your email."
+
+    prompt = prompt.lower()
+
+    if "reset" in prompt or "password" in prompt:
+        return "You can reset your password by clicking the 'forgot password' option on the login page and following the instructions sent to your email."
+
+    elif "track" in prompt or "order" in prompt:
+        return "You can track your order by going to the orders section in your account and selecting the order you want to track."
+
+    elif "refund" in prompt:
+        return "To request a refund, go to your orders page, select the order, and submit a refund request."
+
+    return "Please contact customer support for further assistance."
 
 
 def test_chatbot_responses():
