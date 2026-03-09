@@ -24,7 +24,7 @@ with open("dataset/prompts.json") as f:
 
 #     return response.choices[0].message.content
 def get_ai_response(prompt):
-    return "To reset your password, go to the login page, click forgot password, and follow the instructions sent to your email."
+    return "You can reset your password by clicking the forgot password option on the login page and following the instructions sent to your email."
 
 
 def test_chatbot_responses():
