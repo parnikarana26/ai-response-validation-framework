@@ -5,7 +5,6 @@ from evaluator.keyword_check import keyword_match
 from openai import OpenAI
 import os
 
-# OpenAI client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 SIMILARITY_THRESHOLD = 0.65
