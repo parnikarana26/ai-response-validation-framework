@@ -79,6 +79,9 @@ This can happen due to:
 - Verify billing or quota availability on the API provider platform
 - Reduce request frequency if necessary
 
+  Note: If API quota is unavailable, the framework still demonstrates
+the evaluation methodology using the evaluation pipeline.
+
 ## Limitations
 While this framework provides a useful automated evaluation strategy, it has several limitations:
 
