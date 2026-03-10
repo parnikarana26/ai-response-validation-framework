@@ -29,6 +29,8 @@ def get_ai_response(prompt):
     except Exception as e:
         print("API Error:", e)
         return ""
+        
+        # simulated the AI response as my OpenAI account has reached the limit of usage allowed
 # def get_ai_response(prompt):
 
 #     prompt = prompt.lower()
