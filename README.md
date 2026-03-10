@@ -56,6 +56,25 @@ This approach helps stabilize evaluation results.
 
 Dataset → LLM → Response → Evaluation Engine → Pass/Fail
 
+## Setup Instructions
+
+1. Clone the repository
+
+git clone <repo_link>
+cd ai-response-validation-framework
+
+2. Install dependencies
+
+pip install -r requirements.txt
+
+3. Set the OpenAI API key
+
+export OPENAI_API_KEY="your_api_key"
+
+4. Run the tests
+
+python3 -m pytest -s
+
 ## Thresholds
 
 - Similarity Threshold: 0.6
