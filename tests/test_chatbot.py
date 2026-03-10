@@ -21,14 +21,14 @@ def get_ai_response(prompt):
         response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.7
+            temperature=0.2
         )
 
         return response.choices[0].message.content
 
     except Exception as e:
         print("API Error:", e)
-        return ""
+        return "API quota exceeded or unavailable."
         
         # simulated the AI response as my OpenAI account has reached the limit of usage allowed
 # def get_ai_response(prompt):
@@ -62,7 +62,7 @@ def test_chatbot_responses():
             sim_score = similarity_score(expected, response)
             keyword_score = keyword_match(response, keywords)
 
-            combined_score = (sim_score + keyword_score) / 2
+            combined_score = (0.7 * sim_score) + (0.3 * keyword_score)
             scores.append(combined_score)
             print("\nPrompt:", prompt)
             print("Response:", response)
