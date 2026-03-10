@@ -5,6 +5,7 @@ from evaluator.keyword_check import keyword_match
 from openai import OpenAI
 import os
 
+# Set the key using this command export OPENAI_API_KEY="your_api_key"
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 SIMILARITY_THRESHOLD = 0.6
@@ -15,28 +16,33 @@ with open("dataset/prompts.json") as f:
     prompts = json.load(f)
 
 
+def get_ai_response(prompt):
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7
+        )
+
+        return response.choices[0].message.content
+
+    except Exception as e:
+        print("API Error:", e)
+        return ""
 # def get_ai_response(prompt):
 
-#     response = client.chat.completions.create(
-#         model="gpt-4o-mini",
-#         messages=[{"role": "user", "content": prompt}]
-#     )
+#     prompt = prompt.lower()
 
-#     return response.choices[0].message.content
-def get_ai_response(prompt):
+#     if "reset" in prompt or "password" in prompt:
+#         return "You can reset your password by clicking the 'forgot password' option on the login page and following the instructions sent to your email."
 
-    prompt = prompt.lower()
+#     elif "track" in prompt or "order" in prompt:
+#         return "You can track your order by going to the orders section in your account and selecting the order you want to track."
 
-    if "reset" in prompt or "password" in prompt:
-        return "You can reset your password by clicking the 'forgot password' option on the login page and following the instructions sent to your email."
+#     elif "refund" in prompt:
+#         return "To request a refund, go to your orders page, select the order, and submit a refund request."
 
-    elif "track" in prompt or "order" in prompt:
-        return "You can track your order by going to the orders section in your account and selecting the order you want to track."
-
-    elif "refund" in prompt:
-        return "To request a refund, go to your orders page, select the order, and submit a refund request."
-
-    return "Please contact customer support for further assistance."
+#     return "Please contact customer support for further assistance."
 
 
 def test_chatbot_responses():
