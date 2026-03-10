@@ -41,9 +41,6 @@ def get_ai_response(prompt):
 #     elif "track" in prompt or "order" in prompt:
 #         return "You can track your order by going to the orders section in your account and selecting the order you want to track."
 
-#     elif "refund" in prompt:
-#         return "To request a refund, go to your orders page, select the order, and submit a refund request."
-
 #     return "Please contact customer support for further assistance."
 
 
